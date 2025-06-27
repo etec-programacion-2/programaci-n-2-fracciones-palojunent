@@ -4,11 +4,29 @@
 package org.example
 
 fun main() {
-
+//PUNTO 1
     try {
         val fraccion1 = Fraccion(3, 4) //se le asignan los valores a la fracción 
         println("Fracción: ${fraccion1.mostrar()}") // se printea la fracción normal si el denominador es cero. 
     } catch (e: IllegalArgumentException) { //si en el try ocurre este error(el denominador de la fracción es cero), se ejecuta este catch.
         println("Error al crear fracción: ${e.message}") // se printea que el error es que el denominador de la fracción no puede ser cero, pero el codigo sigue funcionando. 
+    }
+    // PUNTO 2
+    try {
+            // Crear dos fracciones
+            val fraccion1 = Fraccion(3,2) 
+            val fraccion2 = Fraccion(1, 3)  
+            
+            // Sumar las fracciones
+            val resultado = fraccion1 + fraccion2
+            
+            println("Fracción 1: ${fraccion1.mostrar()}")
+            println("Fracción 2: ${fraccion2.mostrar()}")
+            println("Suma: ${resultado.mostrar()}")
+            val resultadoSimplificado = resultado.simplificar()
+            println("Suma simplificada: ${resultadoSimplificado.mostrar()}")
+        
+    } catch (e: IllegalArgumentException) {
+        println("Error: ${e.message}")
     }
 }

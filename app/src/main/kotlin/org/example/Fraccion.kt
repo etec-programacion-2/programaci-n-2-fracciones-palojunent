@@ -1,5 +1,6 @@
 package org.example
 
+//PUNTO 1 
 class Fraccion(
     numerador: Int,
     denominador: Int
@@ -31,4 +32,14 @@ class Fraccion(
     override fun toString(): String {
         return "$numerador/$denominador"
     }
+    //PUNTO 2 
+
+    operator fun plus(otra: Fraccion): Fraccion {
+        //fórmula: (a/b) + (c/d) = (a*d + b*c)/(b*d)
+        val nnumerador= (this.numerador * otra.denominador) + (otra.numerador * this.denominador)
+        val ddenominador = this.denominador *otra.denominador
+        return Fraccion (nnumerador, ddenominador)
+    }
 }
+
+    
