@@ -4,5 +4,11 @@
 package org.example
 
 fun main() {
-    println("Hola app!")
+
+    try {
+        val fraccion1 = Fraccion(3, 4) //se le asignan los valores a la fracción 
+        println("Fracción: ${fraccion1.mostrar()}") // se printea la fracción normal si el denominador es cero. 
+    } catch (e: IllegalArgumentException) { //si en el try ocurre este error(el denominador de la fracción es cero), se ejecuta este catch.
+        println("Error al crear fracción: ${e.message}") // se printea que el error es que el denominador de la fracción no puede ser cero, pero el codigo sigue funcionando. 
+    }
 }
