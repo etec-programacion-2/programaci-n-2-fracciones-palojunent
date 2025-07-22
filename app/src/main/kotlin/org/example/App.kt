@@ -13,8 +13,8 @@ fun main() {
     }
     // PUNTO 2
     try {
-            // Crear dos fracciones
-            val fraccion1 = Fraccion(3,2) 
+            // Crear dos fracciones para el operador plus 
+            val fraccion1 = Fraccion(3, 2) 
             val fraccion2 = Fraccion(1, 3)  
             
             // Sumar las fracciones
@@ -25,7 +25,28 @@ fun main() {
             println("Suma: ${resultado.mostrar()}")
             val resultadoSimplificado = resultado.simplificar()
             println("Suma simplificada: ${resultadoSimplificado.mostrar()}")
+
+ 
         
+    } catch (e: IllegalArgumentException) {
+        println("Error: ${e.message}")
+    }
+    try {
+
+               // Crear dos fracciones para el operador minus
+            val fraccion1 = Fraccion(3, 2) 
+            val fraccion2 = Fraccion(1, 3)  
+            
+            // restar las fracciones
+            val resultado = fraccion1 - fraccion2
+            
+            println("Fracción 1: ${fraccion1.mostrar()}")
+            println("Fracción 2: ${fraccion2.mostrar()}")
+            println("Resta: ${resultado.mostrar()}")
+            val resultadoSimplificado = resultado.simplificar()
+            println("Resta simplificada: ${resultadoSimplificado.mostrar()}")
+
+                        
     } catch (e: IllegalArgumentException) {
         println("Error: ${e.message}")
     }
