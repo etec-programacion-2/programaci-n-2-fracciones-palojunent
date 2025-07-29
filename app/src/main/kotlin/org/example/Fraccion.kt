@@ -17,8 +17,6 @@ class Fraccion(
     init {
         require(denominador != 0) { "El denominador no puede ser cero." }
     }
-
-    fun mostrar(): String = toString()
    
     //PUNTO 2 
 
@@ -34,16 +32,20 @@ class Fraccion(
        val ddenominador = this.denominador *otra.denominador
        return Fraccion (nnumerador, ddenominador).simplificar()
    }
-       fun simplificar(): Fraccion {
+    fun simplificar(): Fraccion {
         val mcd = mcd (this.numerador,this.denominador)
         return Fraccion (this.numerador/mcd, this.denominador/mcd)
     }
      private fun mcd(a: Int, b: Int): Int {
-        return if (b==0) a else mcd(b,a % b)
+        return if (b == 0) a else mcd(b, a % b)
     }
-     override fun toString(): String {
+    override fun toString(): String {
         return "$numerador/$denominador"
     }
+    fun mostrar(): String = toString()
+
+    
+    
 }
 
     

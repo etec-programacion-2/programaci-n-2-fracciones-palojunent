@@ -14,8 +14,8 @@ fun main() {
     // PUNTO 2
     try {
             // Crear dos fracciones para el operador plus 
-            val fraccion1 = Fraccion(3, 2) 
-            val fraccion2 = Fraccion(1, 3)  
+            val fraccion1 = Fraccion(8, 2) 
+            val fraccion2 = Fraccion(4, 4)  
             
             // Sumar las fracciones
             val resultado = fraccion1 + fraccion2
@@ -34,8 +34,8 @@ fun main() {
     try {
 
                // Crear dos fracciones para el operador minus
-            val fraccion1 = Fraccion(3, 2) 
-            val fraccion2 = Fraccion(1, 3)  
+            val fraccion1 = Fraccion(8, 2) 
+            val fraccion2 = Fraccion(4, 4)  
             
             // restar las fracciones
             val resultado = fraccion1 - fraccion2

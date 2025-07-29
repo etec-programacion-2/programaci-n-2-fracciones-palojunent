@@ -39,3 +39,6 @@ no aparecen las fracciones simplificadas, este es el codigo que hice para poder 
     override fun toString(): String {
         return "$numerador/$denominador"
     }
+
+(punto 3)
+
