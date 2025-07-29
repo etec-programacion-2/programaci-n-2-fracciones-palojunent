@@ -42,3 +42,35 @@ no aparecen las fracciones simplificadas, este es el codigo que hice para poder 
 
 (punto 3)
 
+Revisa la parte de simplificacion del siguiente codigo, que no simplifica las fracciones: 
+    
+    operator fun times(otra: Fraccion): Fraccion { 
+        //formula: (a/b) * (c/d) = (ac)/(bd)
+        val multiNumerador = this.numerador * otra.numerador
+        val multiDenominador = this.denominador * otra.denominador
+
+        return Fraccion(multiNumerador, multiDenominador).simplificar()
+    }
+
+    operator fun div(otra: Fraccion): Fraccion{ 
+        //formula: (a/b) / (c/d) = (ad)/(bc)
+        if (otra.numerador == 0){
+            throw IllegalArgumentException("El numerador de la segunda fracción no puede ser cero")
+        }
+        val diviNumerador = this.numerador * otra.denominador
+        val diviDenominador = this.denominador * otra.numerador
+
+        return Fraccion (diviNumerador, diviDenominador). simplificar()
+    }
+
+        fun simplificar(): Fraccion {
+        val mcd = mcd (this.numerador,this.denominador)
+        return Fraccion (this.numerador/mcd, this.denominador/mcd)
+    }
+     private fun mcd(a: Int, b: Int): Int {
+        return if (b == 0) a else mcd(b, a % b)
+    }
+    override fun toString(): String {
+        return "$numerador/$denominador"
+    }
+    fun mostrar(): String = toString()

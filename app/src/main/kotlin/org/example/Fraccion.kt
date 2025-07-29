@@ -44,8 +44,27 @@ class Fraccion(
     }
     fun mostrar(): String = toString()
 
+    //PUNTO TRES 
     
-    
+    operator fun times(otra: Fraccion): Fraccion { 
+        //formula: (a/b) * (c/d) = (ac)/(bd)
+        val multiNumerador = this.numerador * otra.numerador
+        val multiDenominador = this.denominador * otra.denominador
+
+        return Fraccion(multiNumerador, multiDenominador).simplificar()
+    }
+
+    operator fun div(otra: Fraccion): Fraccion{ 
+        //formula: (a/b) / (c/d) = (ad)/(bc)
+        if (otra.numerador == 0){
+            throw IllegalArgumentException("El numerador de la segunda fracción no puede ser cero")
+        }
+        val diviNumerador = this.numerador * otra.denominador
+        val diviDenominador = this.denominador * otra.numerador
+
+        return Fraccion (diviNumerador, diviDenominador). simplificar()
+    }
+   
 }
 
     
