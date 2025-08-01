@@ -1,7 +1,9 @@
-(prompts de IA) 
+(prompts de IA)
+
+HERRAMIENTA USADA PARA TODOS LOS PROMPS: CLAUDE 
 
 (punto 1)
-
+Fecha de los promps: 22/07/25
 le pasamos el codigo:
 
 Implementar el constructor principal que reciba numerador y denominador como parámetros.
@@ -13,7 +15,7 @@ Qué erroes hay en el codigo que no estén siguiendo esta consigna?
 Creame un ejemplo para que pueda implementar la funcion fraccion en el app.kt y que valide si el denominador es cero en el constructor, sin que de error en el codigo. 
 
 (punto 2)
-
+Fecha de los promps: 22/07/25 y 26/07/25
 dame ejemplos de prueba para implementar el siguiente operador: 
 
     operator fun plus(otra: Fraccion): Fraccion {
@@ -41,7 +43,7 @@ no aparecen las fracciones simplificadas, este es el codigo que hice para poder 
     }
 
 (punto 3)
-
+Fecha de los promps: 26/07/25
 Revisa la parte de simplificacion del siguiente codigo, que no simplifica las fracciones: 
     
     operator fun times(otra: Fraccion): Fraccion { 
@@ -76,7 +78,7 @@ Revisa la parte de simplificacion del siguiente codigo, que no simplifica las fr
     fun mostrar(): String = toString()
 
 (punto 4)
-
+Fecha del promp: 01/08/25
 // Convierte el Double en Fracción
  val resulNumerador = (decimal * 10.0.pow(numDecimas)).toInt()
 val resulDenominador = (10.0.pow(numDecimas)).toInt()
