@@ -67,5 +67,21 @@ fun main() {
             println("Error al crear fracción, el operador no puede se cero: ${e.message}") // se printea que el error es que el denominador de la fracción no puede ser cero, pero el codigo sigue funcionando. 
     }
 
+    //PUNTO 4
+    try {
+    val fraccion1 = Fraccion(16, 4)
+    val fraccion2 = Fraccion(4, 4) 
+    println("Comparación: ${fraccion1.compareTo(fraccion2)}")
+    println("Igualdad: ${fraccion1 == fraccion2}")
+    println("fraccion1 es mayor que fraccion2: ${fraccion1.esMayor(fraccion2)}")
+    println("fraccion1 es menor que fraccion2: ${fraccion1.esMenor(fraccion2)}")
+    println("fraccion1 en decimal: ${fraccion1.aDecimal()}")
+    val d1 = 1.75
+    println("fraccion1 en fracción es: ${Fraccion.desdeDecimal(d1)}")
+    } catch (e: IllegalArgumentException) { //si en el try ocurre este error(el denominador de la fracción es cero), se ejecuta este catch.
+        println("Error al crear fracción, el operador no puede ser cero: ${e.message}") // se printea que el error es que el denominador de la fracción no puede ser cero, pero el codigo sigue funcionando.
     
+    }
 }
+
+

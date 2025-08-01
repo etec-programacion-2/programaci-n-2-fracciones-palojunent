@@ -64,7 +64,74 @@ class Fraccion(
 
         return Fraccion (diviNumerador, diviDenominador). simplificar()
     }
-   
+    //PUNTO 4
+    operator fun compareTo(otra: Fraccion): Int {
+       val comparaFraccion = ((this.numerador * otra.denominador). toDouble()).compareTo((otra.numerador * this.denominador).toDouble())
+       return (comparaFraccion)
+   }
+    override fun equals(other: Any?): Boolean { 
+        if (this === other){ // compara si los objetos son los mismos 
+            return true
+        }
+        if (other !is Fraccion) { // si other no es un objeto de la clase, que devuelva falso
+            return false
+        }
+        return this.numerador * other.denominador == other.numerador * this.denominador
+    }
+     fun esMayor(otra: Fraccion): Boolean { // Retorna true si es mayor
+        if (this.numerador * otra.denominador > otra.numerador * this.denominador){
+            return true
+        }
+        return false
+    }
+    fun esMenor(otra: Fraccion): Boolean { // Retorna true si es menor
+        if (this.numerador * otra.denominador < otra.numerador * this.denominador){
+            return true
+        }
+        return false
+    }
+    fun aDecimal(): Double{ // Retorna la fracción como decimal
+        return ((numerador.toDouble() / denominador.toDouble())* 1000) / 1000
+    }
+    companion object{ // No se necesita crear un objeto para usarla
+        //Esta función la hice por que no puedo llamar a la otra dentro de companion object
+        fun simplificar(numerador: Int, denominador: Int): Fraccion{ 
+            var numSim = numerador
+            var denSim = denominador
+
+            while (denSim != 0) {
+                val temp = denSim
+                denSim = numSim % denSim
+                numSim = temp
+            }
+            val resultN: Int = (numerador / numSim)
+            val resultD: Int = (denominador / numSim)
+
+            return Fraccion(resultN,resultD )
+        }
+
+
+        fun desdeDecimal(decimal: Double): Fraccion{ 
+
+            // Divide los decimales del entero
+            val numStr: String = decimal.toString()
+            val decimasStr: String = numStr.substring(numStr.indexOf('.') + 1 )
+            var numDecimas: Int = 0
+            for (i in decimasStr){
+                numDecimas += 1
+            }
+
+            // Convierte el Double en Fracción
+            var potencia = 1
+        repeat(numDecimas) {
+            potencia *= 10
+        }
+        val resulNumerador = (decimal * potencia).toInt()
+        val resulDenominador = potencia
+        return this.simplificar(resulNumerador, resulDenominador)
+        }
+    }
+
 }
 
     

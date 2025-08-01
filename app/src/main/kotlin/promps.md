@@ -74,3 +74,12 @@ Revisa la parte de simplificacion del siguiente codigo, que no simplifica las fr
         return "$numerador/$denominador"
     }
     fun mostrar(): String = toString()
+
+(punto 4)
+
+// Convierte el Double en Fracción
+ val resulNumerador = (decimal * 10.0.pow(numDecimas)).toInt()
+val resulDenominador = (10.0.pow(numDecimas)).toInt()
+return this.simplificar(resulNumerador, resulDenominador) 
+
+me da error en el pow, dame distintas soluciones
